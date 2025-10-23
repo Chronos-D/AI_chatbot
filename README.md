@@ -11,7 +11,9 @@ source venv/bin/activate     # hoặc venv\Scripts\activate trên Windows
 ```
 
 ### 2. Cài thư viện
+```bash
 pip install -r requirements.txt
+```
 
 ### 3. Tạo file .env.example chứa API key
 ```bash
@@ -49,3 +51,4 @@ ai-chat-app/
 └── README.md
 
 ```
+
