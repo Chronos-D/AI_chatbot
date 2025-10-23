@@ -1,0 +1,234 @@
+body {
+  font-family: system-ui, Arial, sans-serif;
+  background: #f3f5f7;
+  color: #222;
+}
+
+.container {
+  margin: 40px 60px;
+  background: #fff;
+  padding: 18px;
+  padding-bottom: 40px; 
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+
+header h1 { 
+  margin: 0 0 10px; 
+  font-size: 20px; 
+}
+
+main {
+  position: relative;
+}
+
+/* --- Chat Box --- */
+#chat-box {
+  height: 500px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  word-wrap: break-word;
+  border: 1px solid #e2e8f0;
+  padding: 12px;
+  background: #fbfdff;
+  border-radius: 6px;
+  box-sizing: border-box;
+  width: 100%;
+  flex-shrink: 0; 
+}
+
+/* --- Messages --- */
+.message { 
+  margin: 8px 0; 
+  padding: 8px 10px; 
+  border-radius: 8px; 
+  max-width: 100%; 
+}
+.message .meta { 
+  font-size: 11px; 
+  color: #666; 
+  margin-bottom: 6px; 
+}
+.message .body pre {
+  background: #f5f5f5;
+  padding: 8px;
+  border-radius: 6px;
+  overflow-x: auto;
+}
+.message .body code {
+  background: #eee;
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-family: monospace;
+}
+
+.user { 
+  background: #e6f3ff; 
+  max-width: 70%;
+  margin-left: auto; 
+  text-align: left; 
+}
+.assistant { 
+  background: #f4f6f8; 
+  margin-right: auto; 
+  text-align: left; 
+}
+.system-error { 
+  background: #ffecec; 
+  color: #c0392b; 
+  border: 1px solid #f2c6c6; 
+}
+
+/* --- Input Area --- */
+#input-area { 
+  display:flex; 
+  gap:8px; 
+  margin-top:12px; 
+  position: relative;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+#user-input { 
+  flex:1; 
+  padding:8px; 
+  border-radius:6px; 
+  border:1px solid #ddd; 
+}
+#send-btn { 
+  padding:8px 12px; 
+  border-radius:6px; 
+  border:none; 
+  background:#2b7cff; 
+  color:white; 
+  cursor:pointer; 
+}
+
+#upload-btn {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: none;
+  background: #7c8e9b; 
+  color: white;
+  cursor: pointer;
+}
+.file-icon { font-style: normal; font-size: 16px; } 
+
+#upload-options {
+  position: absolute; 
+  bottom: 100%; 
+  right: 0;             
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 5px;
+  margin-bottom: 5px; 
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 140px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+.upload-option-btn {
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.2s;
+  color: #333;
+  font-size: 14px;
+}
+.upload-option-btn:hover {
+  background: #f0f4f7;
+}
+
+.hidden { display: none !important; }
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* --- File Name Display --- */
+#file-name {
+  position: absolute;
+  bottom: -38px; 
+  left: 0;
+  font-size: 14px;
+  color: #444;
+  font-style: italic;
+  width: 100%;
+  pointer-events: none; 
+}
+
+.selected-file {
+  display: inline-block;
+  padding: 3px 10px;
+  background: #e6f3ff;
+  border: 1px solid #2b7cff;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #2b7cff;
+  position: relative; 
+  pointer-events: auto;
+}
+
+.selected-file span {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.selected-file .remove-file {
+  cursor: pointer;
+  background: #ff5c5c;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+  position: absolute; 
+  top: -9px;
+  right: -9px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  transition: background 0.2s;
+}
+.selected-file .remove-file:hover {
+  background: #e03b3b;
+}
+
+/* --- Chat Images --- */
+img.chat-image {
+  display: block;
+  margin-top: 8px;
+  border-radius: 6px;
+  object-fit: contain;   
+  max-width: 320px;     
+  max-height: 400px;    
+  width: auto;
+  height: auto;
+}
+
+/* --- Loading Spinner --- */
+.spinner { 
+  display:inline-block; 
+  width:16px; 
+  height:16px; 
+  border:2px solid #ddd; 
+  border-top-color:#2b7cff; 
+  border-radius:50%; 
+  animation:spin 1s linear infinite; 
+  vertical-align: middle;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }

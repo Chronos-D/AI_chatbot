@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <title>AI Chat App</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+  <header><h1>AI Chat App (Demo)</h1></header>
+  <main>
+    <div id="chat-box" aria-live="polite"></div>
+
+    <div id="input-area">
+      <textarea id="user-input" placeholder="Nhập tin nhắn..." rows="1"></textarea>
+      <button id="upload-btn" title="Tải lên tệp"><i class="file-icon"><i class="fa-solid fa-upload"></i></i></button>
+      <button id="send-btn">Gửi</button>
+
+      <div id="upload-options" class="hidden">
+        <label for="image-input" class="upload-option-btn">🖼️ Tải lên ảnh</label>
+        <label for="csv-file-input" class="upload-option-btn">📊 Tải lên CSV</label>
+      </div>
+    </div>
+
+    <div id="file-name" class="file-name"></div>
+
+    <input type="file" id="image-input" accept="image/*" class="visually-hidden">
+    <input type="file" id="csv-file-input" accept=".csv" class="visually-hidden">
+  </main>
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</body>
+</html>
