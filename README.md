@@ -1,4 +1,3 @@
-
 # AI Chat App
 Ứng dụng chat AI đơn giản hỗ trợ text, hình ảnh và CSV, chạy trên local với Gemini API.
 
@@ -6,8 +5,10 @@
 ## Hướng dẫn thiết lập môi trường và chạy app trên local
 
 ### 1. Cài môi trường
+```bash
 python3 -m venv venv
 source venv/bin/activate     # hoặc venv\Scripts\activate trên Windows
+```
 
 ### 2. Cài thư viện
 pip install -r requirements.txt
@@ -46,4 +47,5 @@ ai-chat-app/
 ├── app.py
 ├── requirements.txt
 └── README.md
+
 ```
